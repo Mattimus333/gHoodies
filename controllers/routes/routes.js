@@ -102,12 +102,11 @@ ROUTER.patch('/students/:id', (req, res) => {
 
     let id = Number.parseInt(req.params.id);
 
-    if (!id || !size) {
+    if (!id || !req.body.size) {
         res.set('Content-Type', 'text/plain');
         res.body = 'Bad Request';
         res.sendStatus(400);
     }
-
     KNEX('students')
         .where('id', id)
         .update(req.body)
