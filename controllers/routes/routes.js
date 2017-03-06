@@ -104,6 +104,8 @@ ROUTER.get('/students/name/:name', (req, res) => {
         });
 });
 
+ROUTER.get('/')
+
 ROUTER.patch('/students/:id', (req, res) => {
 
     let id = Number.parseInt(req.params.id);
